@@ -26,6 +26,7 @@ public class BrokenLink {
 	public static BrokenLink justInstance() {
 		if(br==null) {
 			br = new BrokenLink();
+			
 		}
 		return br;
 	}
@@ -44,6 +45,7 @@ public class BrokenLink {
 		
 		WebDriverManager.edgedriver().setup();
 		WebDriver driver = new EdgeDriver();
+		Actions act = new Actions(driver);
 		driver.get(url);
 		List<WebElement> links = driver.findElements(By.tagName("link"));
 		Iterator<WebElement> linkIterator = links.iterator();
